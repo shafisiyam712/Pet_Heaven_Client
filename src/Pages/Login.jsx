@@ -4,12 +4,12 @@ import { authContext } from "../Components/AuthProvider";
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 
 import { FcGoogle } from "react-icons/fc";
-import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { FaEye, FaEyeSlash, FaGithub } from 'react-icons/fa';
 import Lottie from 'lottie-react';
 import loginLottie from '../assets/Lottie/login.json'
 import Swal from 'sweetalert2'
 const Login = () => {
-    const { singInUser, singInWithGoogle } = useContext(authContext)
+    const { singInUser, singInWithGoogle,singInWithGithub } = useContext(authContext)
     const navigate = useNavigate()
     const location = useLocation()
     const [error, setError] = useState("")
@@ -48,6 +48,20 @@ const Login = () => {
     }
     const HandleWithGoogle = () => {
         singInWithGoogle()
+            .then(result => {
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Login successful!!',
+                    icon: 'success',
+                    confirmButtonText: 'Ok'
+                });
+                navigate('/')
+                navigate(location.state.from)
+            })
+    }
+
+    const HandleWithGithub = () => {
+        singInWithGithub()
             .then(result => {
                 Swal.fire({
                     title: 'Success!',
@@ -112,6 +126,11 @@ const Login = () => {
                     <div className="flex gap-1 justify-center items-center ">
                         <FcGoogle className="h-14 w-14 mb-3"></FcGoogle>
                         <button onClick={HandleWithGoogle} className="btn w-40 rounded-full bg-white text-[#1E2A47] hover:bg-[#1E2A47] hover:text-white ">Google Sing In</button>
+                    </div>
+                    <div className="flex gap-1 justify-center items-center ">
+                        <FaGithub className="h-14 w-14 mb-3"></FaGithub>
+                        <button onClick={HandleWithGithub} className="btn w-40 rounded-full bg-white text-[#1E2A47] hover:bg-[#1E2A47] hover:text-white ">GitHub Sing In</button>
+                       
                     </div>
 
 
