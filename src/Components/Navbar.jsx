@@ -1,11 +1,11 @@
 import React from 'react';
 
 const Navbar = () => {
-    return (
-        <div>
-            <h1 className='text-3xl text-center'>Welcome to pet</h1>
-        </div>
-    );
+  return (
+    <div>
+      
+    </div>
+  );
 };
 
 export default Navbar;
