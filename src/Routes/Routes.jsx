@@ -3,6 +3,9 @@ import MainLayout from "../MainLayout/MainLayout";
 import Home from "../Pages/Home";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import PetListing from "../Pages/PetListing";
+import DonationCampaigns from "../Pages/DonationCampaigns";
+import PrivateRoute from "./PrivateRoute";
 
 
 const routes = createBrowserRouter([
@@ -28,6 +31,15 @@ const routes = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login></Login>,
+            },
+            {
+                path: '/PetListing',
+                element: <PetListing></PetListing>
+            },
+            {
+                path: '/DonationCampaigns',
+                element: <DonationCampaigns></DonationCampaigns>
+               
             },
            
         ] 

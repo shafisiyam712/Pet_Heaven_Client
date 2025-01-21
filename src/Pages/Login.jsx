@@ -8,6 +8,7 @@ import { FaEye, FaEyeSlash, FaGithub } from 'react-icons/fa';
 import Lottie from 'lottie-react';
 import loginLottie from '../assets/Lottie/login.json'
 import Swal from 'sweetalert2'
+import { saveUser } from '../Api/Utils';
 const Login = () => {
     const { singInUser, singInWithGoogle,singInWithGithub } = useContext(authContext)
     const navigate = useNavigate()
@@ -46,32 +47,72 @@ const Login = () => {
             })
 
     }
-    const HandleWithGoogle = () => {
-        singInWithGoogle()
-            .then(result => {
-                Swal.fire({
-                    title: 'Success!',
-                    text: 'Login successful!!',
-                    icon: 'success',
-                    confirmButtonText: 'Ok'
-                });
-                navigate('/')
-                navigate(location.state.from)
-            })
-    }
+    // const HandleWithGoogle = () => {
+    //     singInWithGoogle()
+    //         .then(result => {
+    //             Swal.fire({
+    //                 title: 'Success!',
+    //                 text: 'Login successful!!',
+    //                 icon: 'success',
+    //                 confirmButtonText: 'Ok'
+    //             });
+    //             navigate('/')
+    //             navigate(location.state.from)
+    //         })
+    // }
 
-    const HandleWithGithub = () => {
-        singInWithGithub()
-            .then(result => {
-                Swal.fire({
-                    title: 'Success!',
-                    text: 'Login successful!!',
-                    icon: 'success',
-                    confirmButtonText: 'Ok'
-                });
-                navigate('/')
-                navigate(location.state.from)
-            })
+    // const HandleWithGithub = () => {
+    //     singInWithGithub()
+    //         .then(result => {
+    //             Swal.fire({
+    //                 title: 'Success!',
+    //                 text: 'Login successful!!',
+    //                 icon: 'success',
+    //                 confirmButtonText: 'Ok'
+    //             });
+    //             navigate('/')
+    //             navigate(location.state.from)
+    //         })
+    // }
+    const HandleWithGoogle = async () => {
+      //singInWithGoogle()
+      try {
+        //User Registration using google
+        const data = await singInWithGoogle()
+        await saveUser(data?.user)
+       
+        Swal.fire({
+          title: 'Success!',
+          text: 'Registration successful!!',
+          icon: 'success',
+          confirmButtonText: 'Ok'
+        });
+         navigate('/')
+      } catch (err) {
+        console.log(err)
+        // toast.error(err?.message)
+      }
+    }
+    
+    
+    const HandleWithGithub = async() => {
+      //singInWithGithub()
+      try {
+        //User Registration using google
+        const data = await singInWithGithub()
+        await saveUser(data?.user)
+       
+        Swal.fire({
+          title: 'Success!',
+          text: 'Registration successful!!',
+          icon: 'success',
+          confirmButtonText: 'Ok'
+        });
+         navigate('/')
+      } catch (err) {
+        console.log(err)
+        
+      }
     }
 
     return (

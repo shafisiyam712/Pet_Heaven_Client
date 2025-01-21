@@ -28,11 +28,12 @@ const AuthProvider = ({children}) => {
         return signInWithPopup(auth,githubProvider)
     }
 
-    const manageProfile = (name,image) =>{
+    const updateUserProfile = (name,image) =>{
         return updateProfile(auth.currentUser,{
              displayName:name,photoURL:image
          })
        }
+       
     const singOutUser=()=>{
         setLoading(true)
         return signOut(auth)
@@ -85,7 +86,7 @@ const AuthProvider = ({children}) => {
         singOutUser,
         singInWithGoogle,
         singInWithGithub,
-        manageProfile,
+        updateUserProfile,
         user,
     }
 

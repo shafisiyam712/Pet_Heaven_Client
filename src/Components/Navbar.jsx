@@ -10,10 +10,10 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
     const links=<>
     <li><NavLink to='/'>Home</NavLink></li>
-    <li><NavLink to='/availableFoods'>Available Foods</NavLink></li>
-    <li><NavLink to='/addFood'>Add a Food</NavLink></li>
-    <li><NavLink to='/manageFoods'>Manage My Foods</NavLink></li>
-    <li><NavLink to='/foodRequest'>My Food Request</NavLink></li>
+    <li><NavLink to='/DonationCampaigns'>Donation Campaigns</NavLink></li>
+    <li><NavLink to='/PetListing'>Pet Listing</NavLink></li>
+    <li><NavLink to='/register'>Register</NavLink></li>
+    {/* <li><NavLink to='/foodRequest'>My Food Request</NavLink></li> */}
     {/* <li><NavLink to='/about'>About</NavLink></li> */}
    
     </>
@@ -94,10 +94,10 @@ const handleSingOut=()=>{
                     <img
                       className='rounded-full'
                       referrerPolicy='no-referrer'
-                      src={user && user.photoURL ? user.photoURL : avatarImg}
+                      src={user && user.photoURL ? user.photoURL : avatarImg }
                       alt='profile'
-                      height='30'
-                      width='30'
+                      height='40'
+                      width='40'
                     />
                   </div>
                 </div>
