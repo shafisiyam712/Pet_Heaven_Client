@@ -6,3 +6,10 @@ body{
   font-family: "Lato", serif;
   /* background-color:#FBF8EC; */
 }
+html {
+  @apply bg-white text-black;
+}
+
+html.dark {
+  @apply bg-gray-900 text-white;
+}

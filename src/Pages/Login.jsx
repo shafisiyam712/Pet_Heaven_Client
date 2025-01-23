@@ -122,9 +122,9 @@ const Login = () => {
             </div>
             <div className="hero-content flex-col lg:flex">
                 <div className="text-center lg:text-left">
-                    <h1 className="text-[#1E2A47] text-5xl font-bold">Login now!</h1>
+                    <h1 className="text-[#1E2A47] text-5xl font-bold dark:text-white">Login now!</h1>
                 </div>
-                <div className="card w-full max-w-sm shrink-0 shadow-2xl ">
+                <div className="card w-full max-w-sm shrink-0 shadow-2xl dark:bg-white">
                     <form onSubmit={handleLogin} className="card-body ">
                         <div className="form-control">
                             <label className="label">
@@ -159,7 +159,7 @@ const Login = () => {
                             <button className='btn font-bold border border-[#1E2A47] text-[#1E2A47] hover:text-white hover:bg-[#1E2A47]'>Login</button>
                         </div>
                         {error && <p className="text-red-500">{error.message}</p>}
-                        <p className='ml-4 mb-4 cursor-pointer'>
+                        <p className='ml-4 mb-4 cursor-pointer dark:text-black'>
                             Don't have an account? please <Link
                                 to='/register' className="text-blue-500 hover:underline hover:text-[#1E2A47]">Register</Link>
                         </p>
@@ -169,7 +169,7 @@ const Login = () => {
                         <button onClick={HandleWithGoogle} className="btn w-40 rounded-full bg-white text-[#1E2A47] hover:bg-[#1E2A47] hover:text-white ">Google Sing In</button>
                     </div>
                     <div className="flex gap-1 justify-center items-center ">
-                        <FaGithub className="h-14 w-14 mb-3"></FaGithub>
+                        <FaGithub className="h-14 w-14 mb-3 dark:text-black"></FaGithub>
                         <button onClick={HandleWithGithub} className="btn w-40 rounded-full bg-white text-[#1E2A47] hover:bg-[#1E2A47] hover:text-white ">GitHub Sing In</button>
                        
                     </div>

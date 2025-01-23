@@ -134,7 +134,7 @@ return (
     </div>
     <div className="hero-content flex-col lg:flex ">
       <div className="text-center lg:text-left">
-        <h1 className="text-[#1E2A47] text-5xl font-bold">Register now!</h1>
+        <h1 className="text-[#1E2A47] text-5xl font-bold dark:text-white">Register now!</h1>
       </div>
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
         <form onSubmit={handleRegister} className="card-body ">
@@ -188,7 +188,7 @@ return (
           <div className="form-control mt-6">
             <button className='btn font-bold border border-[#1E2A47]  text-[#1E2A47] hover:text-white hover:bg-[#1E2A47]'>Register</button>
           </div>
-          <p className='ml-4 mb-1 cursor-pointer'>
+          <p className='ml-4 mb-1 cursor-pointer dark:text-black'>
             Already have an account? please <Link to='/login' className="text-blue-500 hover:underline hover:text-[#1E2A47]">Login</Link>
           </p>
         </form>
@@ -198,7 +198,7 @@ return (
           <button onClick={HandleWithGoogle} className="btn w-40 rounded-full bg-white text-[#1E2A47] hover:bg-[#1E2A47] hover:text-white ">Google Sing In</button>
         </div>
            <div className="flex gap-1 justify-center items-center ">
-        <FaGithub className="h-12 w-12 mb-2"></FaGithub>
+        <FaGithub className="h-12 w-12 mb-2 dark:text-black"></FaGithub>
         <button onClick={HandleWithGithub} className="btn w-40 rounded-full bg-white text-[#1E2A47] hover:bg-[#1E2A47] hover:text-white ">GitHub Sing In</button>
         
       </div>

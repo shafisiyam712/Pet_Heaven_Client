@@ -5,7 +5,12 @@ import { authContext } from './AuthProvider';
 import { AiOutlineMenu } from 'react-icons/ai'
 import avatarImg from '../assets/Img/placeholder.jpg'
 import { useState } from 'react'
+import { useTheme } from '../Hooks/useTheme';
+import { MdDarkMode } from "react-icons/md";
+import { MdOutlineLightMode } from "react-icons/md";
+
 const Navbar = () => {  
+  const { changeTheme,mode } = useTheme()
    const {user,singOutUser}=useContext(authContext)
   const [isOpen, setIsOpen] = useState(false)
     const links=<>
@@ -31,7 +36,7 @@ const handleSingOut=()=>{
     return (
         <div className="navbar bg-[#c21760]">
         <div className="navbar-start">
-          <div className="dropdown">
+          <div className="dropdown ">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -47,8 +52,13 @@ const handleSingOut=()=>{
               </svg>
             </div>
             <ul
+              // tabIndex={0}
+              // className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+              className={`menu menu-sm dropdown-content rounded-box z-[1] mt-3 w-52 p-2 shadow ${
+                mode === "dark" ? "bg-gray-900 text-white" : "bg-base-100"
+              }`}>
               {links}
             </ul>
           </div>
@@ -64,8 +74,19 @@ const handleSingOut=()=>{
             {links}
           </ul>
         </div>
-        <div className="navbar-end">
-            
+        <div className="navbar-end flex gap-2">
+        <button onClick={changeTheme} className="btn flex items-center gap-2">
+  {mode === "dark" ? (
+    <>
+      <MdOutlineLightMode className="text-xl" /> Light Mode
+    </>
+  ) : (
+    <>
+      <MdDarkMode className="text-xl" /> Dark Mode
+    </>
+  )}
+</button>
+
           {/* {
             user ? 
             <>
@@ -103,11 +124,11 @@ const handleSingOut=()=>{
                 </div>
               </div>
               {isOpen && (
-                <div className='absolute rounded-xl shadow-md w-[40vw] md:w-[10vw] bg-white overflow-hidden right-0 top-12 text-sm'>
+                <div className='absolute rounded-xl shadow-md w-[40vw] md:w-[10vw] bg-white dark:bg-gray-900 overflow-hidden right-0 top-12 text-sm'>
                   <div className='flex flex-col cursor-pointer'>
                     <Link
                       to='/'
-                      className='block md:hidden px-4 py-3 hover:bg-neutral-100 transition font-semibold'
+                      className='block md:hidden px-4 py-3 hover:bg-neutral-100 dark:hover:bg-gray-600 transition font-semibold'
                     >
                       Home
                     </Link>
@@ -116,13 +137,13 @@ const handleSingOut=()=>{
                       <>
                         <Link
                           to='/dashboard'
-                          className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
+                          className='px-4 py-3 hover:bg-neutral-100 dark:hover:bg-gray-600 transition font-semibold '
                         >
                           Dashboard
                         </Link>
                         <div
                           onClick={handleSingOut}
-                          className='px-4 py-3 hover:bg-neutral-100 transition font-semibold cursor-pointer'
+                          className='px-4 py-3 hover:bg-neutral-100 dark:hover:bg-gray-600 transition font-semibold   cursor-pointer'
                         >
                           Logout
                         </div>
@@ -131,13 +152,13 @@ const handleSingOut=()=>{
                       <>
                         <Link
                           to='/login'
-                          className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
+                          className='px-4 py-3 hover:bg-neutral-100 dark:hover:bg-gray-600 transition font-semibold'
                         >
                           Login
                         </Link>
                         <Link
                           to='/register'
-                          className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
+                          className='px-4 py-3 hover:bg-neutral-100 dark:hover:bg-gray-600 transition font-semibold'
                         >
                           Sign Up
                         </Link>
