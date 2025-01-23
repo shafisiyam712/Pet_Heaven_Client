@@ -6,6 +6,7 @@ import Register from "../Pages/Register";
 import PetListing from "../Pages/PetListing";
 import DonationCampaigns from "../Pages/DonationCampaigns";
 import PrivateRoute from "./PrivateRoute";
+import DashboardLayout from "../MainLayout/DashBoardLayout";
 
 
 const routes = createBrowserRouter([
@@ -43,6 +44,80 @@ const routes = createBrowserRouter([
             },
            
         ] 
-    }
+    },
+    {
+        path: '/dashboard',
+        element: (
+          <PrivateRoute>
+            <DashboardLayout></DashboardLayout>
+          </PrivateRoute>
+        ),
+        children: [
+        //   {
+        //     index: true,
+        //     element: (
+        //       <PrivateRoute>
+        //         <Statistics />
+        //       </PrivateRoute>
+        //     ),
+        //   },
+        //   {
+        //     path: 'add-plant',
+        //     element: (
+        //       <PrivateRoute>
+        //         <SellerRoute>
+        //           <AddPlant />
+        //         </SellerRoute>
+        //       </PrivateRoute>
+        //     ),
+        //   },
+        //   {
+        //     path: 'my-inventory',
+        //     element: (
+        //       <PrivateRoute>
+        //         <SellerRoute>
+        //           <MyInventory />
+        //         </SellerRoute>
+        //       </PrivateRoute>
+        //     ),
+        //   },
+        //   {
+        //     path: 'manage-users',
+        //     element: (
+        //       <PrivateRoute>
+        //         <AdminRoute>
+        //           <ManageUsers />
+        //         </AdminRoute>
+        //       </PrivateRoute>
+        //     ),
+        //   },
+        //   {
+        //     path: 'profile',
+        //     element: (
+        //       <PrivateRoute>
+        //         <Profile />
+        //       </PrivateRoute>
+        //     ),
+        //   },
+        //   {
+        //     path: 'my-orders',
+        //     element: (
+        //       <PrivateRoute>
+        //         <MyOrders />
+        //       </PrivateRoute>
+        //     ),
+        //   },
+        //   {
+        //     path: 'manage-orders',
+        //     element: (
+        //       <PrivateRoute>
+        //         <SellerRoute>
+        //           <ManageOrders />
+        //         </SellerRoute>
+        //       </PrivateRoute>
+        //     ),
+        //   },
+        ],
+      },
 ])
 export {routes}

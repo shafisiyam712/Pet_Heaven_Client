@@ -9,11 +9,11 @@ const PrivateRoute = ({children}) => {
     const {user,loading}=useAuth()
     const location = useLocation()
     if(loading){
-        // return <>
-        // <Skeleton /> // Simple, single-line loading skeleton
-        // <Skeleton count={5} /> // Five-line loading skeleton
-        // </>
-        return <span className="loading loading-infinity loading-lg"></span>
+        return <>
+        <Skeleton /> 
+        <Skeleton count={5} /> 
+        </>
+        //return <span className="loading loading-infinity loading-lg"></span>
     }
     if(user){
         return children
