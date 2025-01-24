@@ -63,27 +63,6 @@ const Register = () => {
     }
   }
 
-  // createUser(email, password)
-  //   .then(result => {
-  //     // console.log(result.user);
-  //     updateUserProfile(name, image)
-  //     // console.log(name,image);
-  //     Swal.fire({
-  //       title: 'Success!',
-  //       text: 'Registration successful!!',
-  //       icon: 'success',
-  //       confirmButtonText: 'Ok'
-  //     });
-  //     navigate('/')
-  //   })
-  //   .catch(ero => {
-  //     // console.log("Error:",ero.message);
-  //     if (ero.message.includes('auth/email-already-in-use')) {
-  //       setError('User already in use');
-  //     } else {
-  //       setError('An error occurred. Please try again latter');
-  //     }
-  //   })
 
 
 const HandleWithGoogle = async () => {
@@ -92,7 +71,7 @@ const HandleWithGoogle = async () => {
     //User Registration using google
     const data = await singInWithGoogle()
     await saveUser(data?.user)
-   
+   // console.log(data.user);
     Swal.fire({
       title: 'Success!',
       text: 'Registration successful!!',
@@ -114,6 +93,7 @@ const HandleWithGithub = async() => {
     const data = await singInWithGithub()
     await saveUser(data?.user)
    
+   
     Swal.fire({
       title: 'Success!',
       text: 'Registration successful!!',
@@ -125,6 +105,7 @@ const HandleWithGithub = async() => {
     console.log(err)
     
   }
+  
 }
 
 return (

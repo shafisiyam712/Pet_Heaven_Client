@@ -1,5 +1,5 @@
 import React from 'react';
-//import logo2 from '../assets/logo/icons8-food-donor-100.png'
+import logo2 from '../assets/Logo/Logo2.png'
 const Footer = () => {
     return (
 
@@ -7,7 +7,7 @@ const Footer = () => {
           <div className="bg-[#c21760] mt-5 p-10 flex flex-col md:flex-row">
         <div className="md:w-2/5 mb-10 md:mb-0 ml-10">
           <div className="flex  flex-col mb-3">
-            <img className='w-20 h-20 ml-4' src="" alt="" />
+            <img className='w-20 h-20 ml-4' src={logo2} alt="" />
             <h1 className="font-extrabold text-2xl text-white">Food Feasta</h1>
           </div>
           <p className="text-white">

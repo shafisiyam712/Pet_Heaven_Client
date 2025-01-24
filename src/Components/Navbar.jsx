@@ -8,11 +8,14 @@ import { useState } from 'react'
 import { useTheme } from '../Hooks/useTheme';
 import { MdDarkMode } from "react-icons/md";
 import { MdOutlineLightMode } from "react-icons/md";
+import logo1 from '../assets/Logo/Logo1.png'
 
 const Navbar = () => {  
   const { changeTheme,mode } = useTheme()
    const {user,singOutUser}=useContext(authContext)
   const [isOpen, setIsOpen] = useState(false)
+  //console.log(user);
+  
     const links=<>
     <li><NavLink to='/'>Home</NavLink></li>
     <li><NavLink to='/DonationCampaigns'>Donation Campaigns</NavLink></li>
@@ -63,7 +66,7 @@ const handleSingOut=()=>{
             </ul>
           </div>
           <div className='flex justify-center items-center'>
-            <img className='w-12' src='' alt="" />
+            <img className='w-14' src={logo1} alt="" />
           {/* <a className="btn btn-ghost text-xl font-bold text-white">Food Feasta</a> */}
           <h3 className="text-xl font-bold text-white text-center">Food Feasta</h3>
           </div>
