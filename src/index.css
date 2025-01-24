@@ -15,3 +15,22 @@ html.dark {
 }
 
 
+.react-select__control {
+  @apply bg-white text-black dark:bg-gray-800 dark:text-white border border-gray-300 dark:border-gray-600;
+}
+
+.react-select__menu {
+  @apply bg-white text-black dark:bg-gray-800 dark:text-white;
+}
+
+.react-select__option {
+  @apply hover:bg-gray-100 dark:hover:bg-gray-700;
+}
+
+.react-select__single-value {
+  @apply text-black dark:text-white;
+}
+
+.react-select__dropdown-indicator {
+  @apply text-gray-500 dark:text-gray-300;
+}
