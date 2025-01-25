@@ -35,10 +35,23 @@ const routes = createBrowserRouter([
                 path: '/login',
                 element: <Login></Login>,
             },
+            // {
+            //     path: '/PetListing',
+            //     element: <PetListing></PetListing>,
+            //     loader: ()=>fetch(`${import.meta.env.VITE_API_URL}/pets`),
+            // },
             {
                 path: '/PetListing',
-                element: <PetListing></PetListing>
+                element: <PetListing></PetListing>,
+                loader: () => fetch(`${import.meta.env.VITE_API_URL}/pets`)
+                    .then((res) => {
+                        if (!res.ok) {
+                            throw new Error("Failed to fetch pets");
+                        }
+                        return res.json();
+                    }),
             },
+            
             {
                 path: '/DonationCampaigns',
                 element: <DonationCampaigns></DonationCampaigns>
