@@ -8,6 +8,7 @@ import DonationCampaigns from "../Pages/DonationCampaigns";
 import PrivateRoute from "./PrivateRoute";
 import DashboardLayout from "../MainLayout/DashBoardLayout";
 import AddPet from "../Pages/Users/AddPet";
+import CreateCampaign from "../Pages/Users/CreateCampaign";
 
 
 const routes = createBrowserRouter([
@@ -46,6 +47,11 @@ const routes = createBrowserRouter([
             {
                 path: '/addPet',
                 element: <AddPet></AddPet>
+               
+            },
+            {
+                path: '/createCampaign',
+                element: <CreateCampaign></CreateCampaign>
                
             },
            
