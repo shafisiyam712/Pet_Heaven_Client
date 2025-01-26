@@ -23,7 +23,7 @@ const Pets = ({pets}) => {
                 <h5 className='font-bold mt-2'>PickUpLocation: {PetLocation}</h5>
                 
                     <div className='md:ml-24'>
- <Link to={`/foods/${_id}`}>
+ <Link to={`/pets/${_id}`}>
                      <button className='btn font-bold border border-[#1E2A47] rounded-full text-[#1E2A47] w-1/2 hover:text-white hover:bg-[#1E2A47]'>See Details</button>
                 </Link>
                     </div>

@@ -9,6 +9,7 @@ import PrivateRoute from "./PrivateRoute";
 import DashboardLayout from "../MainLayout/DashBoardLayout";
 import AddPet from "../Pages/Users/AddPet";
 import CreateCampaign from "../Pages/Users/CreateCampaign";
+import PetDetails from "../Pages/PetDetails";
 
 
 const routes = createBrowserRouter([
@@ -51,6 +52,11 @@ const routes = createBrowserRouter([
                         return res.json();
                     }),
             },
+            {
+                path: '/pets/:id',
+                element: <PrivateRoute><PetDetails></PetDetails></PrivateRoute>,
+                loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/pets/${params.id}`)
+            },
             
             {
                 path: '/DonationCampaigns',
@@ -59,7 +65,7 @@ const routes = createBrowserRouter([
             },
             {
                 path: '/addPet',
-                element: <AddPet></AddPet>
+                element: <PrivateRoute><AddPet></AddPet></PrivateRoute>
                
             },
             {
