@@ -10,6 +10,7 @@ import DashboardLayout from "../MainLayout/DashBoardLayout";
 import AddPet from "../Pages/Users/AddPet";
 import CreateCampaign from "../Pages/Users/CreateCampaign";
 import PetDetails from "../Pages/PetDetails";
+import MyAddedPets from "../Pages/Users/MyAddedPets";
 
 
 const routes = createBrowserRouter([
@@ -71,6 +72,11 @@ const routes = createBrowserRouter([
             {
                 path: '/createCampaign',
                 element: <CreateCampaign></CreateCampaign>
+               
+            },
+            {
+                path: '/myaddedpets',
+                element: <MyAddedPets></MyAddedPets>
                
             },
            
