@@ -14,40 +14,42 @@ import React, { useEffect, useState, useContext } from 'react';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 import { authContext } from '../../Components/AuthProvider';
+import useAxiosSecure from '../../Hooks/useAxiosSecure';
+//import useAxiosSecure from '../../Hooks/useAxiosSecure';
 //import { authContext } from '../../Components/AuthProvider';
 
 const MyAddedPets = () => {
     const { user } = useContext(authContext); 
       const [requestedPets, setRequestedPets] = useState([]);
-      //const axiosSecure = useAxiosSecure();
-//       useEffect(() => {
-//           if (user) {
-//             fetch(`http://localhost:5000/pets/user?userEmail=${user.email}`)
-//               .then((res) => {
-//                 if (!res.ok) {
-//                   throw new Error('Failed to fetch requested pets');
-//                 }
-//                 return res.json();
-//               })
-//               .then((data) => {
-//                 console.log(data);
-//                 setRequestedPets(data); 
-//               })
-//               .catch((error) => {
-//                 console.error('Error fetching requested pets:', error);
-//               });
+      const axiosSecure = useAxiosSecure();
+      useEffect(() => {
+          if (user?.email) {
+            // fetch(`http://localhost:5000/pets/user?userEmail=${user.email}`)
+            //   .then((res) => {
+            //     if (!res.ok) {
+            //       throw new Error('Failed to fetch requested pets');
+            //     }
+            //     return res.json();
+            //   })
+            //   .then((data) => {
+            //     console.log(data);
+            //     setRequestedPets(data); 
+            //   })
+            //   .catch((error) => {
+            //     console.error('Error fetching requested pets:', error);
+            //   });
 
-//         //     axios.get(`https://mileston-11-server-side.vercel.app/foods/user?userEmail=${user.email}`, {
-//         //     withCredentials: true
-//         // })
-//         //     .then(res => setRequestedFoods(res.data))
-//         //   }
+        //     axios.get(`https://mileston-11-server-side.vercel.app/foods/user?userEmail=${user.email}`, {
+        //     withCredentials: true
+        // })
+        //     .then(res => setRequestedFoods(res.data))
+        //   }
 
-//         // axiosSecure.get(`/pets/user?userEmail=${user.email}`)
-//         // .then(res => setRequestedFoods(res.data));
-// }
+        axiosSecure.get(`/pets/user?userEmail=${user.email}`)
+        .then(res => setRequestedFoods(res.data));
+}
         
-//         }, [user]);
+        }, [user]);
 
 // useEffect(() => {
 //   if (user) {
@@ -72,22 +74,22 @@ const MyAddedPets = () => {
 // }, [user]);
 console.log(user?.email);
 
-useEffect(() => {
-  if (user?.email) {
-    console.log("Fetching pets for user:", user.email);
-    fetch(`http://localhost:5000/pets/user?userEmail=${user.email}`)
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`Failed to fetch requested pets: ${res.statusText}`);
-        }
-        return res.json();
-      })
-      .then((data) => setRequestedPets(data))
-      .catch((error) => console.error('Error fetching requested pets:', error));
-  } else {
-    console.warn("User email is undefined.");
-  }
-}, [user]);
+// useEffect(() => {
+//   if (user?.email) {
+//     console.log("Fetching pets for user:", user.email);
+//     fetch(`http://localhost:5000/pets/user?userEmail=${user.email}`)
+//       .then((res) => {
+//         if (!res.ok) {
+//           throw new Error(`Failed to fetch requested pets: ${res.statusText}`);
+//         }
+//         return res.json();
+//       })
+//       .then((data) => setRequestedPets(data))
+//       .catch((error) => console.error('Error fetching requested pets:', error));
+//   } else {
+//     console.warn("User email is undefined.");
+//   }
+// }, [user]);
 
       
         const handleDelete = async (petId) => {

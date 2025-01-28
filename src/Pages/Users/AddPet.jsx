@@ -21,6 +21,7 @@ const AddPet = () => {
   const userName = user?.displayName;
   const userPhoto = user?.photoURL;
   const adopted = 'false';
+//console.log(userEmail);
 
   const petCategories = [
     { value: 'dog', label: 'Dog' },
