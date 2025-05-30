@@ -3,12 +3,12 @@ import logo2 from '../assets/Logo/Logo2.png'
 const Footer = () => {
     return (
 
-      <div className='bg-[#c21760] md:h-96'>
-          <div className="bg-[#c21760] mt-5 p-10 flex flex-col md:flex-row">
+      <div className='bg-[#04738C] md:h-96'>
+          <div className="bg-[#04738C] mt-5 p-10 flex flex-col md:flex-row">
         <div className="md:w-2/5 mb-10 md:mb-0 ml-10">
           <div className="flex  flex-col mb-3">
             <img className='w-20 h-20 ml-4' src={logo2} alt="" />
-            <h1 className="font-extrabold text-2xl text-white">Food Feasta</h1>
+            <h1 className="font-extrabold text-2xl text-white">ADAPTA!</h1>
           </div>
           <p className="text-white">
             39/2 Muktijoddha sarak,Narayanganj <br />
@@ -66,7 +66,7 @@ const Footer = () => {
         
       </div>
        <hr />
-      <h3 className="text-white text-lg text-center">Copyright@2024</h3>
+      <h3 className="text-white text-lg text-center">Copyright@2025 & All rights reserved</h3>
       </div>
         
     )

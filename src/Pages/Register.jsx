@@ -167,7 +167,7 @@ return (
           </div>
           {error && <p className="text-red-500">{error}</p>}
           <div className="form-control mt-6">
-            <button className='btn font-bold border border-[#1E2A47]  text-[#1E2A47] hover:text-white hover:bg-[#1E2A47]'>Register</button>
+            <button className='btn font-bold border border-[#04738C]  text-[#04738C] hover:text-white hover:bg-[#04738C]'>Register</button>
           </div>
           <p className='ml-4 mb-1 cursor-pointer dark:text-black'>
             Already have an account? please <Link to='/login' className="text-blue-500 hover:underline hover:text-[#1E2A47]">Login</Link>
@@ -176,11 +176,11 @@ return (
 
         <div className="flex gap-1 justify-center items-center">
           <FcGoogle className="h-12 w-12 mb-2"></FcGoogle>
-          <button onClick={HandleWithGoogle} className="btn w-40 rounded-full bg-white text-[#1E2A47] hover:bg-[#1E2A47] hover:text-white ">Google Sing In</button>
+          <button onClick={HandleWithGoogle} className="btn w-40 rounded-full bg-white text-[#04738C] hover:bg-[#04738C] hover:text-white ">Google Sing In</button>
         </div>
            <div className="flex gap-1 justify-center items-center ">
         <FaGithub className="h-12 w-12 mb-2 dark:text-black"></FaGithub>
-        <button onClick={HandleWithGithub} className="btn w-40 rounded-full bg-white text-[#1E2A47] hover:bg-[#1E2A47] hover:text-white ">GitHub Sing In</button>
+        <button onClick={HandleWithGithub} className="btn w-40 rounded-full bg-white text-[#04738C] hover:bg-[#04738C] hover:text-white ">GitHub Sing In</button>
         
       </div>
       </div>

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, NavLink } from "react-router-dom";
 import { authContext } from './AuthProvider';
-//import logo from '../assets/logo/logo.png'
+// import logo from '../assets/logo/logo.png'
 import { AiOutlineMenu } from 'react-icons/ai'
 import avatarImg from '../assets/Img/placeholder.jpg'
 import { useState } from 'react'
@@ -35,9 +35,9 @@ const handleSingOut=()=>{
    
     
   })
-} //bg-[#E75480] #c21760 #db387e
+} //bg-[#E75480] #c21760 #db387e #04738C
     return (
-        <div className="navbar bg-[#c21760]">
+        <div className="navbar bg-[#04738C]">
         <div className="navbar-start">
           <div className="dropdown ">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -68,7 +68,7 @@ const handleSingOut=()=>{
           <div className='flex justify-center items-center'>
             <img className='w-14' src={logo1} alt="" />
           {/* <a className="btn btn-ghost text-xl font-bold text-white">Food Feasta</a> */}
-          <h3 className="text-xl font-bold text-white text-center">Food Feasta</h3>
+          <h3 className="text-xl font-bold text-white text-center">ADAPTA!</h3>
           </div>
           
         </div>
@@ -78,18 +78,15 @@ const handleSingOut=()=>{
           </ul>
         </div>
         <div className="navbar-end flex gap-2">
-        <button onClick={changeTheme} className="btn flex items-center gap-2">
-  {mode === "dark" ? (
-    <>
-      <MdOutlineLightMode className="text-xl" /> Light Mode
-    </>
-  ) : (
-    <>
-      <MdDarkMode className="text-xl" /> Dark Mode
-    </>
-  )}
-</button>
-
+        <button
+          onClick={changeTheme}
+          aria-label="Toggle theme"
+          className={`text-xl p-2 transition-colors duration-200 ${
+            mode === "dark" ? "hover:text-white" : "hover:text-black"
+          }`}
+        >
+          {mode === "dark" ? <MdOutlineLightMode /> : <MdDarkMode />}
+        </button>
           {/* {
             user ? 
             <>

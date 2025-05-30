@@ -57,6 +57,7 @@ const routes = createBrowserRouter([
                 path: '/pets/:id',
                 element: <PrivateRoute><PetDetails></PetDetails></PrivateRoute>,
                 loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/pets/${params.id}`)
+                
             },
             
             {

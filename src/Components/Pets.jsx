@@ -24,7 +24,7 @@ const Pets = ({pets}) => {
                 
                     <div className='md:ml-24'>
  <Link to={`/pets/${_id}`}>
-                     <button className='btn font-bold border border-[#1E2A47] rounded-full text-[#1E2A47] w-1/2 hover:text-white hover:bg-[#1E2A47]'>See Details</button>
+                     <button className='btn font-bold border border-[#04738C] rounded-full text-[#04738C] w-1/2 hover:text-white hover:bg-[#04738C]'>See Details</button>
                 </Link>
                     </div>
                

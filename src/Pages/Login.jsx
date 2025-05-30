@@ -104,7 +104,7 @@ const Login = () => {
        
         Swal.fire({
           title: 'Success!',
-          text: 'Registration successful!!',
+          text: 'Login successful!!',
           icon: 'success',
           confirmButtonText: 'Ok'
         });
@@ -156,7 +156,7 @@ const Login = () => {
                         </div>
 
                         <div className="form-control mt-6">
-                            <button className='btn font-bold border border-[#1E2A47] text-[#1E2A47] hover:text-white hover:bg-[#1E2A47]'>Login</button>
+                            <button className='btn font-bold border border-[#04738C] text-[#04738C] hover:text-white hover:bg-[#04738C]'>Login</button>
                         </div>
                         {error && <p className="text-red-500">{error.message}</p>}
                         <p className='ml-4 mb-4 cursor-pointer dark:text-black'>
@@ -166,11 +166,11 @@ const Login = () => {
                     </form>
                     <div className="flex gap-1 justify-center items-center ">
                         <FcGoogle className="h-14 w-14 mb-3"></FcGoogle>
-                        <button onClick={HandleWithGoogle} className="btn w-40 rounded-full bg-white text-[#1E2A47] hover:bg-[#1E2A47] hover:text-white ">Google Sing In</button>
+                        <button onClick={HandleWithGoogle} className="btn w-40 rounded-full bg-white text-[#04738C] hover:bg-[#04738C] hover:text-white ">Google Sing In</button>
                     </div>
                     <div className="flex gap-1 justify-center items-center ">
                         <FaGithub className="h-14 w-14 mb-3 dark:text-black"></FaGithub>
-                        <button onClick={HandleWithGithub} className="btn w-40 rounded-full bg-white text-[#1E2A47] hover:bg-[#1E2A47] hover:text-white ">GitHub Sing In</button>
+                        <button onClick={HandleWithGithub} className="btn w-40 rounded-full bg-white text-[#04738C] hover:bg-[#04738C] hover:text-white ">GitHub Sing In</button>
                        
                     </div>
 

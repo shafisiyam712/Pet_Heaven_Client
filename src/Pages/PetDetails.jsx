@@ -24,7 +24,9 @@ const PetDetails = () => {
     userPhoto,
     userEmail,
   } = data || {};
+   console.log(data)
   console.log(user);
+ 
   
   const handleRequest = () => {
     const requestData = {

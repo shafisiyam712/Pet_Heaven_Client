@@ -205,7 +205,7 @@ const AddPet = () => {
 
           {/* Submit button */}
           <div className="form-control mt-6">
-            <button className="btn font-bold border border-[#1E2A47] rounded-full w-2/6 mx-auto text-[#1E2A47] hover:text-white hover:bg-[#1E2A47]">
+            <button className="btn font-bold border border-[#04738C] rounded-full w-2/6 mx-auto text-[#04738C] hover:text-white hover:bg-[#04738C]">
               Add Pet
             </button>
           </div>

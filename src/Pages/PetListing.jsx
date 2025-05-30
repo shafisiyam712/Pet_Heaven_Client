@@ -76,7 +76,7 @@ const PetListing = () => {
             <div className="w-36 mx-auto mt-10 pl-2">
                 <button
                     onClick={() => setIsTwoColumn(!isTwoColumn)} 
-                    className="btn font-bold border border-[#1E2A47] rounded-full text-[#1E2A47]  hover:text-white hover:bg-[#1E2A47]"
+                    className="btn font-bold border border-[#04738C] rounded-full text-[#04738C]  hover:text-white hover:bg-[#04738C]"
                 >
                     
                     Change Layout
