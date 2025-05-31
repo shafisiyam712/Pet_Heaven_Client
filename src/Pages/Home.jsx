@@ -1,11 +1,15 @@
 import React from 'react';
 import Banner from '../Components/Banner';
+import Heading from '../Components/Heading';
+import BannerDescription from '../Components/BannerDescription';
 
 const Home = () => {
     return (
         <div>
-            <h1 className='text-3xl text-center my-12'>Welcome to Pet Adoption</h1>
+            <Heading></Heading>
             <Banner></Banner>
+            <BannerDescription></BannerDescription>
+            
         </div>
     );
 };

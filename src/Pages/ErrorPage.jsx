@@ -1,104 +1,24 @@
-import React from 'react';
-
+import { useNavigate } from 'react-router-dom';
+import errorImg from '../assets/Img/error.webp'
+import { useTheme } from '../Hooks/useTheme';
 const ErrorPage = () => {
+    const navigate=useNavigate()
+    const { changeTheme,mode }=useTheme();
+    const GoHome = () => {
+        navigate('/')
+    }
     return (
-        <div>
-            
+        <div className="flex flex-col justify-center items-center w-full h-full dark:bg-[#1E2A47]">
+            <div className="flex flex-col justify-center items-center gap-3 my-20 dark:bg-[#1E2A47]">
+            <img src={errorImg} className='mt-20' alt="" />
+            <h1 className="text-3xl">Page Not Found</h1>
+            <div>
+                    <button onClick={GoHome} className='mb-20 btn w-40 font-bold border border-[#04738C] rounded-full text-[#04738C] hover:text-white hover:bg-[#04738C]'>Go Back</button>
+                </div>
         </div>
+        </div>
+        
     );
 };
 
-// export default ErrorPage;
-// export const router = createBrowserRouter([
-//     {
-//       path: '/',
-//       element: <MainLayout />,
-//       errorElement: <ErrorPage />,
-//       children: [
-//         {
-//           path: '/',
-//           element: <Home />,
-//         },
-//         {
-//           path: '/plant/:id',
-//           element: <PlantDetails />,
-//         },
-//       ],
-//     },
-//     { path: '/login', element: <Login /> },
-//     { path: '/signup', element: <SignUp /> },
-//     {
-//       path: '/dashboard',
-//       element: (
-//         <PrivateRoute>
-//           <DashboardLayout />
-//         </PrivateRoute>
-//       ),
-//       children: [
-//         {
-//           index: true,
-//           element: (
-//             <PrivateRoute>
-//               <Statistics />
-//             </PrivateRoute>
-//           ),
-//         },
-//         {
-//           path: 'add-plant',
-//           element: (
-//             <PrivateRoute>
-//               <SellerRoute>
-//                 <AddPlant />
-//               </SellerRoute>
-//             </PrivateRoute>
-//           ),
-//         },
-//         {
-//           path: 'my-inventory',
-//           element: (
-//             <PrivateRoute>
-//               <SellerRoute>
-//                 <MyInventory />
-//               </SellerRoute>
-//             </PrivateRoute>
-//           ),
-//         },
-//         {
-//           path: 'manage-users',
-//           element: (
-//             <PrivateRoute>
-//               <AdminRoute>
-//                 <ManageUsers />
-//               </AdminRoute>
-//             </PrivateRoute>
-//           ),
-//         },
-//         {
-//           path: 'profile',
-//           element: (
-//             <PrivateRoute>
-//               <Profile />
-//             </PrivateRoute>
-//           ),
-//         },
-//         {
-//           path: 'my-orders',
-//           element: (
-//             <PrivateRoute>
-//               <MyOrders />
-//             </PrivateRoute>
-//           ),
-//         },
-//         {
-//           path: 'manage-orders',
-//           element: (
-//             <PrivateRoute>
-//               <SellerRoute>
-//                 <ManageOrders />
-//               </SellerRoute>
-//             </PrivateRoute>
-//           ),
-//         },
-//       ],
-//     },
-//   ])
+export default ErrorPage;

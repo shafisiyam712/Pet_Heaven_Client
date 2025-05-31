@@ -20,9 +20,9 @@ const Navbar = () => {
     <li><NavLink to='/'>Home</NavLink></li>
     <li><NavLink to='/DonationCampaigns'>Donation Campaigns</NavLink></li>
     <li><NavLink to='/PetListing'>Pet Listing</NavLink></li>
+    <li><NavLink to='/addPet'>Add Pet</NavLink></li>
     <li><NavLink to='/register'>Register</NavLink></li>
-    {/* <li><NavLink to='/foodRequest'>My Food Request</NavLink></li> */}
-    {/* <li><NavLink to='/about'>About</NavLink></li> */}
+    
    
     </>
 

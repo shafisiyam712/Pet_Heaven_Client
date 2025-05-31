@@ -11,12 +11,14 @@ import AddPet from "../Pages/Users/AddPet";
 import CreateCampaign from "../Pages/Users/CreateCampaign";
 import PetDetails from "../Pages/PetDetails";
 import MyAddedPets from "../Pages/Users/MyAddedPets";
+import ErrorPage from "../Pages/ErrorPage";
 
 
 const routes = createBrowserRouter([
     {
         path: '/',
         element: <MainLayout></MainLayout>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
@@ -68,7 +70,7 @@ const routes = createBrowserRouter([
             {
                 path: '/addPet',
                 element: <PrivateRoute><AddPet></AddPet></PrivateRoute>
-               
+            //    element: <AddPet></AddPet>
             },
             {
                 path: '/createCampaign',
