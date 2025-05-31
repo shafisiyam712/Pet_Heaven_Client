@@ -19,8 +19,8 @@ const Pets = ({pets}) => {
 
             <div className='mt-3 flex flex-col gap-3 mb-2'>
            
-                <h5 className='font-bold mt-2'>Food Quantity: {PetAge}</h5>
-                <h5 className='font-bold mt-2'>PickUpLocation: {PetLocation}</h5>
+                <h5 className='font-bold mt-2'>Pet Age: {PetAge}</h5>
+                <h5 className='font-bold mt-2'>Pet Location: {PetLocation}</h5>
                 
                     <div className='md:ml-24'>
  <Link to={`/pets/${_id}`}>
